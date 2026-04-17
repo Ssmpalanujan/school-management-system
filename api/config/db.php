@@ -1,9 +1,9 @@
 <?php
 // config/db.php
-$host = 'localhost';
-$dbname = 'vipulananda_school';
-$username = 'root';
-$password = ''; // Default WAMP password
+$host = getenv('DB_HOST') ?: 'localhost';
+$dbname = getenv('DB_NAME') ?: 'vipulananda_school';
+$username = getenv('DB_USER') ?: 'root';
+$password = getenv('DB_PASSWORD') ?: ''; 
 
 try {
     $pdo = new PDO("mysql:host=$host;dbname=$dbname;charset=utf8mb4", $username, $password);
